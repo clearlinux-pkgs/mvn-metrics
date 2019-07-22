@@ -4,16 +4,22 @@
 #
 Name     : mvn-metrics
 Version  : 3.1.5
-Release  : 2
+Release  : 3
 URL      : https://github.com/dropwizard/metrics/archive/v3.1.5.tar.gz
 Source0  : https://github.com/dropwizard/metrics/archive/v3.1.5.tar.gz
-Source1  : https://repo1.maven.org/maven2/com/yammer/metrics/metrics-parent/2.2.0/metrics-parent-2.2.0.pom
-Source2  : https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/3.1.5/metrics-core-3.1.5.jar
-Source3  : https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/3.1.5/metrics-core-3.1.5.pom
-Source4  : https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-parent/3.1.5/metrics-parent-3.1.5.pom
+Source1  : https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-graphite/3.1.5/metrics-graphite-3.1.5.jar
+Source2  : https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-graphite/3.1.5/metrics-graphite-3.1.5.pom
+Source3  : https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-json/3.1.5/metrics-json-3.1.5.jar
+Source4  : https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-json/3.1.5/metrics-json-3.1.5.pom
+Source5  : https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-jvm/3.1.5/metrics-jvm-3.1.5.jar
+Source6  : https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-jvm/3.1.5/metrics-jvm-3.1.5.pom
+Source7  : https://repo1.maven.org/maven2/com/yammer/metrics/metrics-parent/2.2.0/metrics-parent-2.2.0.pom
+Source8  : https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/3.1.5/metrics-core-3.1.5.jar
+Source9  : https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/3.1.5/metrics-core-3.1.5.pom
+Source10  : https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-parent/3.1.5/metrics-parent-3.1.5.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : Apache-2.0
+License  : Apache-2.0 Public-Domain
 Requires: mvn-metrics-data = %{version}-%{release}
 
 %description
@@ -33,17 +39,35 @@ data components for the mvn-metrics package.
 %build
 
 %install
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-graphite/3.1.5
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-graphite/3.1.5/metrics-graphite-3.1.5.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-graphite/3.1.5
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-graphite/3.1.5/metrics-graphite-3.1.5.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-json/3.1.5
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-json/3.1.5/metrics-json-3.1.5.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-json/3.1.5
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-json/3.1.5/metrics-json-3.1.5.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-jvm/3.1.5
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-jvm/3.1.5/metrics-jvm-3.1.5.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-jvm/3.1.5
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-jvm/3.1.5/metrics-jvm-3.1.5.pom
+
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/yammer/metrics/metrics-parent/2.2.0
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/yammer/metrics/metrics-parent/2.2.0
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/com/yammer/metrics/metrics-parent/2.2.0/metrics-parent-2.2.0.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.1.5
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.1.5
+cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.1.5/metrics-core-3.1.5.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.1.5
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.1.5
+cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.1.5/metrics-core-3.1.5.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-parent/3.1.5
-cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-parent/3.1.5
+cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-parent/3.1.5/metrics-parent-3.1.5.pom
 
 
 %files
@@ -54,4 +78,10 @@ cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/m
 /usr/share/java/.m2/repository/com/yammer/metrics/metrics-parent/2.2.0/metrics-parent-2.2.0.pom
 /usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.1.5/metrics-core-3.1.5.jar
 /usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.1.5/metrics-core-3.1.5.pom
+/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-graphite/3.1.5/metrics-graphite-3.1.5.jar
+/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-graphite/3.1.5/metrics-graphite-3.1.5.pom
+/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-json/3.1.5/metrics-json-3.1.5.jar
+/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-json/3.1.5/metrics-json-3.1.5.pom
+/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-jvm/3.1.5/metrics-jvm-3.1.5.jar
+/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-jvm/3.1.5/metrics-jvm-3.1.5.pom
 /usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-parent/3.1.5/metrics-parent-3.1.5.pom
