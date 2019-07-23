@@ -4,7 +4,7 @@
 #
 Name     : mvn-metrics
 Version  : 3.1.5
-Release  : 3
+Release  : 4
 URL      : https://github.com/dropwizard/metrics/archive/v3.1.5.tar.gz
 Source0  : https://github.com/dropwizard/metrics/archive/v3.1.5.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-graphite/3.1.5/metrics-graphite-3.1.5.jar
