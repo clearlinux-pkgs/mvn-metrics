@@ -4,7 +4,7 @@
 #
 Name     : mvn-metrics
 Version  : 3.1.5
-Release  : 5
+Release  : 6
 URL      : https://github.com/dropwizard/metrics/archive/v3.1.5.tar.gz
 Source0  : https://github.com/dropwizard/metrics/archive/v3.1.5.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0.jar
@@ -18,7 +18,10 @@ Source8  : https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-jv
 Source9  : https://repo1.maven.org/maven2/com/yammer/metrics/metrics-parent/2.2.0/metrics-parent-2.2.0.pom
 Source10  : https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/3.1.5/metrics-core-3.1.5.jar
 Source11  : https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/3.1.5/metrics-core-3.1.5.pom
-Source12  : https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-parent/3.1.5/metrics-parent-3.1.5.pom
+Source12  : https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/3.2.4/metrics-core-3.2.4.jar
+Source13  : https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/3.2.4/metrics-core-3.2.4.pom
+Source14  : https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-parent/3.1.5/metrics-parent-3.1.5.pom
+Source15  : https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-parent/3.2.4/metrics-parent-3.2.4.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 Public-Domain
@@ -74,8 +77,17 @@ cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.1.5
 cp %{SOURCE11} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.1.5/metrics-core-3.1.5.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.2.4
+cp %{SOURCE12} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.2.4/metrics-core-3.2.4.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.2.4
+cp %{SOURCE13} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.2.4/metrics-core-3.2.4.pom
+
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-parent/3.1.5
-cp %{SOURCE12} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-parent/3.1.5/metrics-parent-3.1.5.pom
+cp %{SOURCE14} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-parent/3.1.5/metrics-parent-3.1.5.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-parent/3.2.4
+cp %{SOURCE15} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-parent/3.2.4/metrics-parent-3.2.4.pom
 
 
 %files
@@ -88,6 +100,8 @@ cp %{SOURCE12} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/
 /usr/share/java/.m2/repository/com/yammer/metrics/metrics-parent/2.2.0/metrics-parent-2.2.0.pom
 /usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.1.5/metrics-core-3.1.5.jar
 /usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.1.5/metrics-core-3.1.5.pom
+/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.2.4/metrics-core-3.2.4.jar
+/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-core/3.2.4/metrics-core-3.2.4.pom
 /usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-graphite/3.1.5/metrics-graphite-3.1.5.jar
 /usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-graphite/3.1.5/metrics-graphite-3.1.5.pom
 /usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-json/3.1.5/metrics-json-3.1.5.jar
@@ -95,3 +109,4 @@ cp %{SOURCE12} %{buildroot}/usr/share/java/.m2/repository/io/dropwizard/metrics/
 /usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-jvm/3.1.5/metrics-jvm-3.1.5.jar
 /usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-jvm/3.1.5/metrics-jvm-3.1.5.pom
 /usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-parent/3.1.5/metrics-parent-3.1.5.pom
+/usr/share/java/.m2/repository/io/dropwizard/metrics/metrics-parent/3.2.4/metrics-parent-3.2.4.pom
