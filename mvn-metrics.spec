@@ -4,7 +4,7 @@
 #
 Name     : mvn-metrics
 Version  : 4.0.5
-Release  : 9
+Release  : 10
 URL      : https://github.com/dropwizard/metrics/archive/v4.0.5.tar.gz
 Source0  : https://github.com/dropwizard/metrics/archive/v4.0.5.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0.jar
